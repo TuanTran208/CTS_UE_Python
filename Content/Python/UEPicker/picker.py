@@ -79,10 +79,10 @@ class Picker(QtWidgets.QMainWindow):
         self.ctrlRig = ctrlRigs_[0]
         self.preCtrl = self.ctrlRig.control_rig.current_control_selection()
         print(self.ctrlRig)
-        log_file = utils.get_log_file()
+        log_file = loglib.get_log_file()
         self.currentDataFile = f"{log_file}{self.charName}.json"
         if not os.path.isfile(self.currentDataFile):
-            self.currentDataFile = os.path.join(os.path.dirname(__file__), "data", "mannequin.json")
+            self.currentDataFile = config_loader.get_default_cfg()
             self.loadData()
             self.currentDataFile = f"{log_file}{self.charName}.json"
             self.saveData()

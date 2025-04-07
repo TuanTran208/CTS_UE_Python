@@ -8,7 +8,7 @@ if cts_ue_python not in sys.path:
     sys.path.append(cts_ue_python)
 
 # Add dependencies
-dependencies = os.path.join(os.path.dirname(__file__), "dependencies")
+dependencies = os.path.join(os.path.dirname(__file__), ".venv/Lib/site-packages")
 if dependencies not in sys.path:
     sys.path.append(dependencies)
 
